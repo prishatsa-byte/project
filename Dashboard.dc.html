@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Qwikhr Dashboard</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#12264A;background:#EEF3F9}
+button{font-family:inherit;cursor:pointer}
+a{text-decoration:none}
+button:focus-visible,a:focus-visible{outline:2px solid #2F6FDE;outline-offset:2px}
+table{border-collapse:collapse;width:100%}
+</style>
+</helmet>
+<div style="display:flex;flex-wrap:wrap;min-height:1400px;background:#EEF3F9;font-family:'Inter',system-ui,sans-serif;color:#12264A">
+
+<!-- SIDEBAR -->
+<aside style="width:235px;flex:1 0 235px;max-width:235px;box-sizing:border-box;background:#FFFFFF;border-right:1px solid #DCE6F2;display:flex;flex-direction:column;padding:22px 14px 18px 14px">
+<div style="display:flex;align-items:center;gap:10px;padding:0 8px 22px 8px">
+<div style="width:34px;height:34px;border-radius:10px;background:#12264A;display:flex;align-items:center;justify-content:center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"></circle><path d="M15.5 15.5L20 20"></path></svg>
+</div>
+<span style="font-size:21px;font-weight:700;letter-spacing:-0.3px;color:#12264A">Qwikhr</span>
+</div>
+<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#6B7A93;padding:0 10px 10px 10px">CORE MODULES</div>
+<nav style="display:flex;flex-direction:column;gap:4px">
+<a href="Dashboard.dc.html" aria-current="page" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border-radius:10px;background:#12264A;color:#FFFFFF;font-size:14px;font-weight:600;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>Dashboard</a>
+<a href="Main.dc.html" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"></path></svg>Attendance</a>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>Leave</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg>My Payslips</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8"></path></svg>HR Documents</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>HR Policies</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4M4 4h13l-2 4 2 4H4"></path></svg>Holidays</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>My Team</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:#3E5073;font-size:14px;font-weight:500;text-align:left">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Job Referrals</button>
+</nav>
+<div style="flex:1 1 auto;min-height:24px"></div>
+<div style="border:1px solid #DCE6F2;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:12px;background:#F7FAFD">
+<div style="display:flex;align-items:center;gap:10px">
+<div style="width:38px;height:38px;border-radius:50%;background:#E3EDFB;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div style="min-width:0">
+<div style="font-size:14px;font-weight:600;color:#12264A">Prisha Jagdish</div>
+<div style="font-size:11px;font-weight:600;letter-spacing:0.8px;color:#6B7A93">EMPLOYEE</div>
+</div>
+</div>
+<div style="display:flex;gap:8px">
+<button type="button" aria-label="Settings" style="flex:1;height:34px;border:1px solid #DCE6F2;border-radius:8px;background:#FFFFFF;color:#3E5073;display:flex;align-items:center;justify-content:center">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg>
+</button>
+<button type="button" aria-label="Notifications" style="flex:1;height:34px;border:1px solid #DCE6F2;border-radius:8px;background:#FFFFFF;color:#3E5073;display:flex;align-items:center;justify-content:center">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+</button>
+</div>
+<button type="button" style="width:100%;height:38px;border:1px solid #F3C9C6;border-radius:8px;background:#FFF1F0;color:#C23B34;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg>Logout</button>
+</div>
+</aside>
+
+<!-- MAIN -->
+<main style="flex:999 1 560px;min-width:0;box-sizing:border-box;padding:24px;display:flex;flex-direction:column;gap:16px">
+
+<!-- Welcome + overview -->
+<section style="display:flex;flex-wrap:wrap;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);min-height:150px">
+<div style="flex:1.3 1 380px;min-width:0;box-sizing:border-box;padding:20px 24px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+<div style="display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;color:#5F6E87">
+<span style="width:8px;height:8px;border-radius:50%;background:#22B07D;display:inline-block"></span>Thu, 12 Jun 2025 • 14:32</div>
+<div style="display:flex;align-items:center;gap:14px">
+<div role="img" aria-label="Profile photo placeholder" style="width:56px;height:56px;border-radius:50%;background:#E3EDFB;border:2px solid #FFFFFF;box-shadow:0 0 0 1px #DCE6F2;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div style="min-width:0">
+<h2 style="margin:0;font-size:20px;font-weight:700;color:#12264A">Welcome back, Prisha J</h2>
+<p style="margin:4px 0 0 0;font-size:13px;line-height:1.45;color:#5F6E87">Manage your attendance, leave, payslips, and employee services all in one place.</p>
+</div>
+</div>
+</div>
+<div style="flex:1.4 1 400px;min-width:0;box-sizing:border-box;padding:20px 24px;border-left:1px solid #E3ECF6;display:flex;flex-direction:column;justify-content:center;gap:12px">
+<div style="font-size:15px;font-weight:700;color:#12264A">Overview</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px 0">
+<div style="flex:1 1 120px;display:flex;align-items:center;gap:10px;padding-right:14px">
+<div style="width:36px;height:36px;border-radius:10px;background:#DDF5EA;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A50" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"></path></svg>
+</div>
+<div><div style="font-size:12px;color:#5F6E87">Present Days</div><div style="font-size:22px;font-weight:700;line-height:1.2;color:#12264A">18 / 22</div></div>
+</div>
+<div style="flex:1 1 120px;display:flex;align-items:center;gap:10px;padding:0 14px;border-left:1px solid #E3ECF6">
+<div style="width:36px;height:36px;border-radius:10px;background:#FFE6E4;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C23B34" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18M10 14l4 4M14 14l-4 4"></path></svg>
+</div>
+<div><div style="font-size:12px;color:#5F6E87">Absent Days</div><div style="font-size:22px;font-weight:700;line-height:1.2;color:#12264A">2 / 22</div></div>
+</div>
+<div style="flex:1 1 120px;display:flex;align-items:center;gap:10px;padding-left:14px;border-left:1px solid #E3ECF6">
+<div style="width:36px;height:36px;border-radius:10px;background:#EEE6FF;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6D3FD1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="#6D3FD1"></path></svg>
+</div>
+<div><div style="font-size:12px;color:#5F6E87">Half Day</div><div style="font-size:22px;font-weight:700;line-height:1.2;color:#12264A">1 / 22</div></div>
+</div>
+</div>
+</div>
+<div style="flex:1 1 260px;min-width:0;box-sizing:border-box;padding:20px 24px;border-left:1px solid #E3ECF6;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
+<span style="font-size:13.5px;font-weight:500;color:#3E5073">Noticing a wrong count?</span>
+<button type="button" style="height:36px;padding:0 14px;border:1.5px solid #2F6FDE;border-radius:9px;background:#FFFFFF;color:#2F6FDE;font-size:13px;font-weight:600">Raise Tickets →</button>
+</div>
+</section>
+
+<!-- Row A / B / C -->
+<section style="display:flex;flex-wrap:wrap;gap:16px;align-items:stretch">
+
+<!-- Card A -->
+<div style="flex:1.7 1 480px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+<div>
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Today's Attendance</div>
+<div style="font-size:12.5px;color:#5F6E87;margin-top:4px">Shift Window: 11:00 AM – 8:00 PM</div>
+</div>
+<button type="button" style="border:0;background:transparent;color:#2F6FDE;font-size:13px;font-weight:600;display:flex;align-items:center;gap:4px;padding:4px 0">Today
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+<div style="display:flex;flex-wrap:wrap;background:#E8F8F0;border:1px solid #BFE9D6;border-radius:12px">
+<div style="flex:1 1 220px;display:flex;align-items:center;gap:14px;padding:16px 18px">
+<div style="width:46px;height:46px;border-radius:50%;background:#22B07D;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+</div>
+<div><div style="font-size:16px;font-weight:700;color:#0B5F3D">You are punched in</div><div style="font-size:12.5px;color:#2E7D5B;margin-top:2px">Since 11:02 AM</div></div>
+</div>
+<div style="flex:1.4 1 300px;display:flex;align-items:center;gap:14px;padding:16px 18px;border-left:1px solid #BFE9D6">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4zM6 2v3M10 2v3M14 2v3"></path></svg>
+<div style="flex:1;min-width:0">
+<div style="font-size:14px;font-weight:700;color:#12264A">Break</div>
+<div style="font-size:12px;color:#4A5C7A;margin-top:2px;line-height:1.35">Take break (Only during 1:00 PM – 2:00 PM)</div>
+</div>
+<button type="button" style="height:34px;padding:0 14px;border:1.5px solid #2F6FDE;border-radius:9px;background:#FFFFFF;color:#2F6FDE;font-size:12.5px;font-weight:600;flex:none">Take Break</button>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;border:1px solid #E3ECF6;border-radius:10px;padding:12px 16px;background:#FFFFFF">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F6E87" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<span style="flex:1;font-size:13.5px;color:#3E5073">Today's total work time</span>
+<span style="font-size:18px;font-weight:700;color:#12264A">3h 30m</span>
+</div>
+<div style="flex:1 1 auto"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+<button type="button" style="height:38px;padding:0 16px;border:1.5px solid #2F6FDE;border-radius:9px;background:#FFFFFF;color:#2F6FDE;font-size:13px;font-weight:600">Any issues?</button>
+<a href="Main.dc.html" style="height:38px;padding:0 16px;border-radius:9px;background:#12264A;color:#FFFFFF;font-size:13px;font-weight:600;display:inline-flex;align-items:center;box-sizing:border-box">View Attendance Module →</a>
+</div>
+</div>
+
+<!-- Card B -->
+<div style="flex:1.3 1 360px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column;gap:14px">
+<div>
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Leave Balance</div>
+<div style="font-size:12.5px;color:#5F6E87;margin-top:4px">Annual Quota</div>
+</div>
+<div style="background:#E8F8F0;border:1px solid #BFE9D6;border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center">
+<div style="font-size:44px;font-weight:700;line-height:1.05;color:#1E9E6A">18</div>
+<div style="font-size:14px;font-weight:700;color:#12264A">Paid Leaves</div>
+<div style="font-size:12px;color:#4A5C7A">(you can take during the Annual Year)</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+<div style="background:#E8F8F0;border:1px solid #BFE9D6;border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
+<div style="width:34px;height:34px;border-radius:50%;background:#C9EFDD;display:flex;align-items:center;justify-content:center">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0E7A50" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</div>
+<div style="font-size:12px;font-weight:600;color:#12264A">Casual Leave</div>
+<div style="font-size:12px;color:#4A5C7A">7 / 7 days</div>
+</div>
+<div style="background:#FFF6E0;border:1px solid #F5DFA6;border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
+<div style="width:34px;height:34px;border-radius:50%;background:#FBE8B4;display:flex;align-items:center;justify-content:center">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"></path></svg>
+</div>
+<div style="font-size:12px;font-weight:600;color:#12264A">Sick Leave</div>
+<div style="font-size:12px;color:#4A5C7A">6 / 6 days</div>
+</div>
+<div style="background:#F3EDFF;border:1px solid #D9C9F7;border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
+<div style="width:34px;height:34px;border-radius:50%;background:#E4D6FB;display:flex;align-items:center;justify-content:center">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6D3FD1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path></svg>
+</div>
+<div style="font-size:12px;font-weight:600;color:#12264A">Earned Leave</div>
+<div style="font-size:12px;color:#4A5C7A">5 / 5 days</div>
+</div>
+</div>
+<button type="button" style="margin-top:auto;width:100%;height:42px;border:1px solid #BFE9D6;border-radius:10px;background:#DDF5EA;color:#0E7A50;font-size:13.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>Apply for Leave →</button>
+</div>
+
+<!-- Card C -->
+<div style="flex:0.8 1 220px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg>Quick Actions</div>
+<button type="button" style="display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:12px;border:1px solid #DCE6F2;border-radius:10px;background:#FFFFFF;color:#12264A;font-size:13.5px;font-weight:600;text-align:left">
+<span style="width:34px;height:34px;border-radius:50%;background:#E3EDFB;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2F6FDE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg>
+</span>
+<span style="flex:1">View Payslip</span>
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5F6E87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+<button type="button" style="display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:12px;border:1px solid #DCE6F2;border-radius:10px;background:#FFFFFF;color:#12264A;font-size:13.5px;font-weight:600;text-align:left">
+<span style="width:34px;height:34px;border-radius:50%;background:#E3EDFB;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2F6FDE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18M12 14v4M10 16h4"></path></svg>
+</span>
+<span style="flex:1">Apply Leave</span>
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5F6E87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+</div>
+</section>
+
+<!-- Notifications + announcements -->
+<section style="display:flex;flex-wrap:wrap;gap:16px;align-items:stretch">
+<div style="flex:58 1 480px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A;padding-bottom:10px">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Notifications &amp; Reminders</div>
+<div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #E3ECF6;flex-wrap:wrap">
+<div style="width:40px;height:40px;border-radius:50%;background:#FFE6E4;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C23B34" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+</div>
+<div style="flex:1 1 240px;min-width:0">
+<div style="font-size:14px;font-weight:700;color:#12264A">Forgot to File for Leave you took on 18th</div>
+<div style="font-size:12.5px;color:#5F6E87;margin-top:3px;line-height:1.45">You took leave on 18th, but haven't filed it yet. Please submit your leave request to keep your records updated.</div>
+</div>
+<button type="button" style="height:36px;padding:0 14px;border:0;border-radius:9px;background:#2F6FDE;color:#FFFFFF;font-size:13px;font-weight:600;flex:none">Take Action →</button>
+</div>
+<div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #E3ECF6;flex-wrap:wrap">
+<div style="width:40px;height:40px;border-radius:50%;background:#E3EDFB;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2F6FDE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8"></path></svg>
+</div>
+<div style="flex:1 1 240px;min-width:0">
+<div style="font-size:14px;font-weight:700;color:#12264A">Forgot to Submit your Degree Certificates</div>
+<div style="font-size:12.5px;color:#5F6E87;margin-top:3px;line-height:1.45">Your degree certificates are pending. Please upload them at the earliest to complete your profile.</div>
+</div>
+<button type="button" style="height:36px;padding:0 14px;border:0;border-radius:9px;background:#2F6FDE;color:#FFFFFF;font-size:13px;font-weight:600;flex:none">Take Action →</button>
+</div>
+<div style="display:flex;align-items:center;gap:14px;padding:14px 0 0 0;border-top:1px solid #E3ECF6;flex-wrap:wrap">
+<div style="width:40px;height:40px;border-radius:50%;background:#FFF1CC;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+</div>
+<div style="flex:1 1 240px;min-width:0">
+<div style="font-size:14px;font-weight:700;color:#12264A">Forgot to fill your missing Work Quota</div>
+<div style="font-size:12.5px;color:#5F6E87;margin-top:3px;line-height:1.45">You have a pending work quota to complete. Please fill in the details to stay on track.</div>
+</div>
+<button type="button" style="height:36px;padding:0 14px;border:0;border-radius:9px;background:#2F6FDE;color:#FFFFFF;font-size:13px;font-weight:600;flex:none">Take Action →</button>
+</div>
+</div>
+
+<div style="flex:42 1 340px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px">
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg>Announcements</div>
+<button type="button" style="border:0;background:transparent;color:#2F6FDE;font-size:13px;font-weight:600;padding:4px 0">View All</button>
+</div>
+<div style="display:flex;gap:12px;padding:11px 0;border-top:1px solid #E3ECF6">
+<div style="width:34px;height:34px;border-radius:50%;background:#FDE4EF;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B02A6B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2 1 2 1M2 21h20M7 8v3M12 8v3M17 8v3"></path></svg>
+</div>
+<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#12264A">Happy Birthday, Employee 1!</div><div style="font-size:12px;color:#5F6E87;margin-top:2px;line-height:1.4">Wishing you a day filled with joy, success, and all your favorite things. Have a fantastic year ahead!</div></div>
+<div style="font-size:11.5px;color:#6B7A93;white-space:nowrap">2h ago</div>
+</div>
+<div style="display:flex;gap:12px;padding:11px 0;border-top:1px solid #E3ECF6">
+<div style="width:34px;height:34px;border-radius:50%;background:#FDE4EF;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B02A6B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2 1 2 1M2 21h20M7 8v3M12 8v3M17 8v3"></path></svg>
+</div>
+<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#12264A">Happy Birthday, Employee 2!</div><div style="font-size:12px;color:#5F6E87;margin-top:2px;line-height:1.4">Wishing you a day filled with joy, success, and all your favorite things. Have a fantastic year ahead!</div></div>
+<div style="font-size:11.5px;color:#6B7A93;white-space:nowrap">1d ago</div>
+</div>
+<div style="display:flex;gap:12px;padding:11px 0;border-top:1px solid #E3ECF6">
+<div style="width:34px;height:34px;border-radius:50%;background:#E3EDFB;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2F6FDE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#12264A">Client Visit – Tomorrow</div><div style="font-size:12px;color:#5F6E87;margin-top:2px;line-height:1.4">The client visit is scheduled for tomorrow at 10:00 AM. Please be prepared and connect with your team.</div></div>
+<div style="font-size:11.5px;color:#6B7A93;white-space:nowrap">2d ago</div>
+</div>
+<div style="display:flex;gap:12px;padding:11px 0 0 0;border-top:1px solid #E3ECF6">
+<div style="width:34px;height:34px;border-radius:50%;background:#EEE6FF;display:flex;align-items:center;justify-content:center;flex:none">
+<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6D3FD1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg>
+</div>
+<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#12264A">Team Reminder</div><div style="font-size:12px;color:#5F6E87;margin-top:2px;line-height:1.4">Don't forget to submit your weekly updates by EOD.</div></div>
+<div style="font-size:11.5px;color:#6B7A93;white-space:nowrap">3d ago</div>
+</div>
+</div>
+</section>
+
+<!-- Calendar + attendance table -->
+<section style="display:flex;flex-wrap:wrap;gap:16px;align-items:stretch">
+<div style="flex:40 1 360px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Calendar</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:#4A5C7A">
+<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:#22B07D"></span>Holidays</span>
+<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:#8B5CF6"></span>Events</span>
+<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:#6C7BFF"></span>Working Days</span>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:14px">
+<button type="button" aria-label="Previous month" style="width:28px;height:28px;border:1px solid #DCE6F2;border-radius:8px;background:#F7FAFD;color:#3E5073;display:flex;align-items:center;justify-content:center;padding:0">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+</button>
+<span style="font-size:14px;font-weight:700;color:#12264A;min-width:96px;text-align:center">June 2025</span>
+<button type="button" aria-label="Next month" style="width:28px;height:28px;border:1px solid #DCE6F2;border-radius:8px;background:#F7FAFD;color:#3E5073;display:flex;align-items:center;justify-content:center;padding:0">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;text-align:center">
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Sun</div>
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Mon</div>
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Tue</div>
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Wed</div>
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Thu</div>
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Fri</div>
+<div style="font-size:11.5px;font-weight:600;color:#6B7A93;padding:4px 0">Sat</div>
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="35">
+<div style="height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;background:{{c.bg}};color:{{c.fg}};font-weight:{{c.weight}};box-shadow:{{c.ring}}">{{c.n}}</div>
+</sc-for>
+</div>
+</div>
+
+<div style="flex:60 1 520px;min-width:0;box-sizing:border-box;background:#FFFFFF;border:1px solid #DCE6F2;border-radius:14px;box-shadow:0 1px 3px rgba(18,38,74,0.06);padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#12264A">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12264A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Attendance Details</div>
+<div style="overflow-x:auto;border:1px solid #E3ECF6;border-radius:10px">
+<table style="min-width:560px;font-size:12.5px">
+<thead>
+<tr style="background:#F1F5FB;text-align:left;color:#5F6E87;font-size:12px">
+<th style="padding:12px 14px;font-weight:600">Date</th>
+<th style="padding:12px 14px;font-weight:600">Day</th>
+<th style="padding:12px 14px;font-weight:600">Check-in</th>
+<th style="padding:12px 14px;font-weight:600">Break (Out - In)</th>
+<th style="padding:12px 14px;font-weight:600">Check-out</th>
+<th style="padding:12px 14px;font-weight:600">Total Hours</th>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+<tr style="border-top:1px solid #E3ECF6;color:#3E5073">
+<td style="padding:14px 14px;font-weight:600;color:#12264A">{{r.date}}</td>
+<td style="padding:14px 14px">{{r.day}}</td>
+<td style="padding:14px 14px">{{r.checkIn}}</td>
+<td style="padding:14px 14px">{{r.brk}}</td>
+<td style="padding:14px 14px">{{r.checkOut}}</td>
+<td style="padding:14px 14px;font-weight:600;color:#12264A">{{r.hours}}</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() {
+const rows = [
+{ date: '02/06/2025', day: 'Mon', checkIn: '09:31 AM', brk: '01:00 PM – 01:30 PM', checkOut: '06:31 PM', hours: '8h 00m' },
+{ date: '03/06/2025', day: 'Tue', checkIn: '09:28 AM', brk: '01:05 PM – 01:35 PM', checkOut: '06:28 PM', hours: '7h 55m' },
+{ date: '04/06/2025', day: 'Wed', checkIn: '09:32 AM', brk: '01:00 PM – 01:30 PM', checkOut: '06:32 PM', hours: '8h 00m' },
+{ date: '05/06/2025', day: 'Thu', checkIn: '09:27 AM', brk: '01:10 PM – 01:40 PM', checkOut: '06:27 PM', hours: '7h 50m' },
+{ date: '06/06/2025', day: 'Fri', checkIn: '09:33 AM', brk: '01:00 PM – 01:30 PM', checkOut: '06:36 PM', hours: '8h 03m' },
+{ date: '07/06/2025', day: 'Sat', checkIn: '09:30 AM', brk: '01:05 PM – 01:35 PM', checkOut: '06:30 PM', hours: '7h 55m' },
+{ date: '09/06/2025', day: 'Mon', checkIn: '09:29 AM', brk: '01:00 PM – 01:30 PM', checkOut: '06:29 PM', hours: '8h 00m' }
+];
+const holidays = [19, 27];
+const events = [20, 25];
+const cells = [];
+for (let i = 0; i < 35; i++) {
+const inMonth = i < 30;
+const n = inMonth ? i + 1 : i - 29;
+const wd = i % 7;
+let bg = 'transparent', fg = '#12264A', weight = 500, ring = 'none';
+if (!inMonth) { fg = '#A3AEC2'; }
+else if (holidays.indexOf(n) >= 0) { bg = '#D4F2E4'; fg = '#0B5F3D'; weight = 700; }
+else if (events.indexOf(n) >= 0) { bg = '#E6D8FD'; fg = '#5B21B6'; weight = 700; }
+else if (wd >= 1 && wd <= 5) { bg = '#EAF0FF'; fg = '#2F4FB3'; }
+else { fg = '#5F6E87'; }
+if (inMonth && n === 12) { ring = 'inset 0 0 0 2px #12264A'; weight = 700; }
+cells.push({ n, bg, fg, weight, ring });
+}
+return { rows, cells };
+}
+}
+</script>
+</body>
+</html>
